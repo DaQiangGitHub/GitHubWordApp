@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UILabel * lable;
+
 @end
 
 @implementation ViewController
@@ -18,8 +20,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self.view addSubview:self.lable];
     NSLog(@"aegrer");
 }
+
+
+#pragma mark -- getter
+
+- (UILabel *)lable
+{
+    if (!_lable) {
+        _lable = [[UILabel alloc] initWithFrame:self.view.frame];
+        _lable.backgroundColor = [UIColor greenColor];
+    }
+    return _lable;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
